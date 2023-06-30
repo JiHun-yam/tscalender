@@ -51,12 +51,14 @@ const ControlContainer = styled.div`
 `;
 
 const ControlBtnBox = styled.div`
+    position: relative;
+    top: 2px;
     > button {
         border: 0;
         margin: 0;
         background-color: white;
         width: 30px;
-        margin: 10px;
+        margin: 20px;
         
         &:hover{
             background-color: gray;

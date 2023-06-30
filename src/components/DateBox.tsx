@@ -11,6 +11,7 @@ const mothList = (nowDate: Date) =>{
   const dayLastWeek = new Date(nowYear, nowMonth+ 1,0).getDay();
 
   const result: Date[] = [];
+  
   const prevMonthed = new Date(nowYear, nowMonth,0).getDate();
   const nowMonthed = new Date(nowYear, nowMonth+ 1,0).getDate();
 
@@ -22,6 +23,7 @@ const mothList = (nowDate: Date) =>{
   for(let i =1; i<=nowMonthed; i++){
     result.push(new Date(nowYear, nowMonth, i))
   }
+
 
   for(let i =1; i< 7 - dayLastWeek; i++){
     result.push(new Date(nowYear, nowMonth, i))
@@ -52,7 +54,13 @@ const DateBox = ({nowDate ,setNowDate, ClickedDate, setClickedDate}:Props) => {
       })}
       {/* 일 */}
       {allDay.map((day: Date)=>{
-        return <AllDay day={day}></AllDay> 
+        return <AllDay 
+                  day={day} 
+                  nowDate={nowDate}
+                  setNowDate={setNowDate} 
+                  ClickedDate={ClickedDate} 
+                  setClickedDate={setClickedDate}
+                  />
       })}
     </DateBoxContainer>
   )
